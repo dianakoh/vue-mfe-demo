@@ -44,7 +44,9 @@ module.exports = defineConfig({
       new webpack.container.ModuleFederationPlugin({
         name: 'host',
         filename: 'remoteEntry.js',
-        remotes: {},
+        remotes: {
+          commonComponents: 'commonComponents@http://localhost:8081/remoteEntry.js',
+        },
         exposes: {},
         shared: {
           vue: {

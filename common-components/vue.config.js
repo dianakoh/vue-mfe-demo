@@ -62,10 +62,12 @@ module.exports = defineConfig({
     },
     plugins: [
       new webpack.container.ModuleFederationPlugin({
-        name: 'vueRemote',
+        name: 'commonComponents',
         filename: 'remoteEntry.js',
         remotes: {},
-        exposes: {},
+        exposes: {
+          './Navigation.vue': './src/components/navigation/Navigation.vue',
+        },
         shared: {
           vue: {
             singleton: true,
