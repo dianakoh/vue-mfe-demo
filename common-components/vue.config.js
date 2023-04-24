@@ -36,7 +36,7 @@ module.exports = defineConfig({
   },
   publicPath: 'auto',
   devServer: {
-    port: 8081,
+    port: 8084,
     historyApiFallback: true,
   },
   configureWebpack: {

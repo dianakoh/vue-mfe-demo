@@ -45,7 +45,7 @@ module.exports = defineConfig({
         name: 'host',
         filename: 'remoteEntry.js',
         remotes: {
-          commonComponents: 'commonComponents@http://localhost:8081/remoteEntry.js',
+          commonComponents: 'commonComponents@http://localhost:8084/remoteEntry.js',
         },
         exposes: {},
         shared: {
