@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container"></div>
+  <div class="card-container"><slot /></div>
 </template>
 
 <script lang="ts">
@@ -20,11 +20,11 @@ export default defineComponent({
 .card-container {
   position: relative;
   display: block;
-  width: 800px;
-  height: 300px;
-  margin: 80px auto;
+  width: 50rem;
+  height: 18.75rem;
+  margin: 5rem auto;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   transition: all 0.4s;
   box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
 }

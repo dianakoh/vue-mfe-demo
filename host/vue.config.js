@@ -27,6 +27,15 @@ console.log(
   process.env.VUE_APP_ENV
 );
 
+const distributionURL = '';
+
+const getRemoteEntry = (appName, port) => {
+  if (process.env.NODE_ENV === 'production') {
+    return `https://${distributionURL}/${appName}/remoteEntry.js`;
+  }
+  return `http://localhost:${port}/remoteEntry.js`;
+};
+
 module.exports = defineConfig({
   assetsDir: isLocalEnv ? 'resource/' : '../resources/',
   pages: {
@@ -45,7 +54,8 @@ module.exports = defineConfig({
         name: 'host',
         filename: 'remoteEntry.js',
         remotes: {
-          commonComponents: 'commonComponents@http://localhost:8084/remoteEntry.js',
+          commonComponents: `commonComponents@${getRemoteEntry('common-components', 8084)}`,
+          appList: `appList@${getRemoteEntry('app-list', 8081)}`,
         },
         exposes: {},
         shared: {

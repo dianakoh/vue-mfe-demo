@@ -1,14 +1,11 @@
 <template>
-  <div><AppList /></div>
+  <router-view />
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, reactive } from 'vue';
+import { defineComponent, reactive } from 'vue';
 export default defineComponent({
-  name: 'HomeView',
-  components: {
-    AppList: defineAsyncComponent(() => import('appList/HomeView.vue')),
-  },
+  name: 'App',
   setup(props, { emit }) {
     const state = reactive({});
 

@@ -36,7 +36,7 @@ module.exports = defineConfig({
   },
   publicPath: 'auto',
   devServer: {
-    port: 8084,
+    port: 8081,
     historyApiFallback: true,
   },
   configureWebpack: {
@@ -62,13 +62,15 @@ module.exports = defineConfig({
     },
     plugins: [
       new webpack.container.ModuleFederationPlugin({
-        name: 'commonComponents',
+        name: 'appList',
         filename: 'remoteEntry.js',
-        remotes: {},
+        remotes: {
+          commonComponents: 'commonComponents@http://localhost:8084/remoteEntry.js',
+        },
         exposes: {
-          './BaseCard.vue': './src/components/card/BaseCard.vue',
-          './Navigation.vue': './src/components/navigation/Navigation.vue',
-          './MainTemplate.vue': './src/components/template/MainTemplate.vue',
+          './mount': './src/mount.ts',
+          './App.vue': './src/App.vue',
+          './HomeView.vue': './src/views/HomeView.vue',
         },
         shared: {
           vue: {
