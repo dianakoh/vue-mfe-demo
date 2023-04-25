@@ -24,7 +24,7 @@
 import { defineComponent, reactive, computed } from 'vue';
 import BaseCard from 'commonComponents/BaseCard.vue';
 export default defineComponent({
-  name: 'MovieCard',
+  name: 'MovieList',
   components: {
     BaseCard,
   },

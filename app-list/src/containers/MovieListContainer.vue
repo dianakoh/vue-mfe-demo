@@ -4,7 +4,7 @@
       <span class="loader-text">Loading Movies...</span>
     </div>
     <div v-else>
-      <MovieCard :data="state.movies" />
+      <MovieList :data="state.movies" />
     </div>
   </MainTemplate>
 </template>
@@ -14,12 +14,12 @@ import { defineComponent, onMounted, reactive } from 'vue';
 import axios from 'axios';
 import _ from 'lodash';
 import MainTemplate from 'commonComponents/MainTemplate.vue';
-import { MovieCard } from '@/components';
+import { MovieList } from '@/components';
 export default defineComponent({
   name: 'MovieListContainer',
   components: {
     MainTemplate,
-    MovieCard,
+    MovieList,
   },
   setup(props, { emit }) {
     const state = reactive({
