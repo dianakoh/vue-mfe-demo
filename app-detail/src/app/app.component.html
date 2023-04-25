@@ -1,0 +1,23 @@
+<ng-template [ngIf]="movie" [ngIfElse]="loading">
+  <div class="movie-detail">
+    <div class="detail-information">
+      <div>
+        <img
+          class="poster-img"
+          src="https://yts.mx/assets/images/movies/last_resort_2022/large-cover.jpg"
+          alt="Last Resort"
+          title="Last Resort"
+        />
+      </div>
+      <div class="detail-desc">
+        <div class="title">{{ movie.title }}</div>
+        <div class="year-genres">{{ movie.year }} • {{ movie.genres.join('/') }}</div>
+        <p class="summary">{{ movie.description_full }}</p>
+      </div>
+    </div>
+    <div class="blur-background"></div>
+  </div>
+</ng-template>
+<ng-template #loading>
+  <div>Loading Movie...</div>
+</ng-template>
