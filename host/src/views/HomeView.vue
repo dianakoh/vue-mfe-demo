@@ -1,16 +1,18 @@
 <template>
-  <div><AppList /></div>
+  <div id="app-list"></div>
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, reactive } from 'vue';
+import { defineComponent, reactive, onMounted } from 'vue';
+import { mount } from 'appList/mount';
 export default defineComponent({
   name: 'HomeView',
-  components: {
-    AppList: defineAsyncComponent(() => import('appList/HomeView.vue')),
-  },
   setup(props, { emit }) {
     const state = reactive({});
+
+    onMounted(async () => {
+      await mount();
+    });
 
     return {
       state,

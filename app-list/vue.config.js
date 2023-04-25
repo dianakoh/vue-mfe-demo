@@ -69,8 +69,6 @@ module.exports = defineConfig({
         },
         exposes: {
           './mount': './src/mount.ts',
-          './App.vue': './src/App.vue',
-          './HomeView.vue': './src/views/HomeView.vue',
         },
         shared: {
           vue: {
