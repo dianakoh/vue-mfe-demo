@@ -10,7 +10,7 @@ sharedMappings.register(path.join(__dirname, 'tsconfig.json'), [
 
 module.exports = {
   output: {
-    uniqueName: 'appDetail',
+    uniqueName: 'angAppDetail',
     publicPath: 'auto',
   },
   optimization: {
@@ -29,7 +29,7 @@ module.exports = {
       library: { type: 'module' },
 
       // For remotes (please adjust)
-      name: 'appDetail',
+      name: 'angAppDetail',
       filename: 'remoteEntry.js',
       exposes: {
         // './Component': './/src/app/app.component.ts',
