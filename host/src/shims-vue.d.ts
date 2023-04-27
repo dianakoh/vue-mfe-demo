@@ -6,5 +6,5 @@ declare module '*.vue' {
 }
 
 declare module 'commonComponents/*';
-
 declare module 'appList/*';
+declare module 'appDetail/*';

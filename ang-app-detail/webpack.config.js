@@ -33,7 +33,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         // './Component': './/src/app/app.component.ts',
-        './MovieDetailComponent': './/src/app/movie-detail/movie-detail.component.ts',
+        AppModule: './/src/app/app.module.ts',
       },
 
       // For hosts (please adjust)

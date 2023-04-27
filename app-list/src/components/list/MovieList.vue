@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseCard v-for="movie in state.movies" :key="movie.id">
+    <BaseCard v-for="movie in state.movies" :key="movie.id" @click="goToMovieDetail(movie.id)">
       <div class="info-section">
         <div class="movie-header">
           <img class="locandina" :src="movie.medium_cover_image" :alt="movie.title" :title="movie.title" />
@@ -36,8 +36,14 @@ export default defineComponent({
       movies: computed(() => props.data),
     });
 
+    function goToMovieDetail(id: number) {
+      const customClickEvent = new CustomEvent('item-click', { detail: { id } });
+      window.dispatchEvent(customClickEvent);
+    }
+
     return {
       state,
+      goToMovieDetail,
     };
   },
 });

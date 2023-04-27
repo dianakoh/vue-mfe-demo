@@ -15,6 +15,7 @@ import axios from 'axios';
 import _ from 'lodash';
 import MainTemplate from 'commonComponents/MainTemplate.vue';
 import { MovieList } from '@/components';
+import MovieListData from '../mock/movie-list.json';
 export default defineComponent({
   name: 'MovieListContainer',
   components: {
@@ -23,16 +24,17 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const state = reactive({
-      movies: [],
+      movies: [] as any[],
     });
 
     const getMovies = async () => {
-      const {
-        data: {
-          data: { movies },
-        },
-      } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating');
+      // const {
+      //   data: {
+      //     data: { movies },
+      //   },
+      // } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating');
 
+      const movies = MovieListData.data.movies;
       state.movies = movies;
     };
 

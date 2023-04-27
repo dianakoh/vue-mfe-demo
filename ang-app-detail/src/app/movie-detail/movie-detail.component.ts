@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieApiService } from '../movie-api.service';
 import { Movie } from '../movie/movie.model';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import MovieDetailData from '../mock/movie-detail.json';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -15,14 +15,15 @@ export class MovieDetailComponent implements OnInit {
   constructor(private movieApiService: MovieApiService, private router: Router, private route: ActivatedRoute) {}
 
   async getMovieDetails(id: number) {
-    await this.movieApiService
-      .getMovieDetails(id)
-      .then((response) => {
-        this.movie = response.data.data.movie;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // await this.movieApiService
+    //   .getMovieDetails(id)
+    //   .then((response) => {
+    //     this.movie = response.data.data.movie;
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
+    this.movie = MovieDetailData.data.movie;
   }
 
   async ngOnInit(): Promise<void> {

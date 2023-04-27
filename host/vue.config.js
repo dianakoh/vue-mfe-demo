@@ -56,6 +56,7 @@ module.exports = defineConfig({
         remotes: {
           commonComponents: `commonComponents@${getRemoteEntry('common-components', 8084)}`,
           appList: `appList@${getRemoteEntry('app-list', 8081)}`,
+          appDetail: `appDetail@${getRemoteEntry('app-detail', 8082)}`,
         },
         exposes: {},
         shared: {
