@@ -1,0 +1,65 @@
+{
+  "status": "ok",
+  "status_message": "Query was successful",
+  "data": {
+    "movie": {
+      "id": 50834,
+      "url": "https://yts.mx/movies/last-resort-2022",
+      "imdb_code": "tt16118360",
+      "title": "Last Resort",
+      "title_english": "Last Resort",
+      "title_long": "Last Resort (2022)",
+      "slug": "last-resort-2022",
+      "year": 2022,
+      "rating": 9.4,
+      "runtime": 0,
+      "genres": ["Drama"],
+      "download_count": 7070,
+      "like_count": 1,
+      "description_intro": "Two terminally ill hospice residents conspire to make their spouses fall in love with each other to lessen the impact of their death. Things go awry when they themselves fall in love and one of them begins to feel better.",
+      "description_full": "Two terminally ill hospice residents conspire to make their spouses fall in love with each other to lessen the impact of their death. Things go awry when they themselves fall in love and one of them begins to feel better.",
+      "yt_trailer_code": "",
+      "language": "en",
+      "mpa_rating": "R",
+      "background_image": "https://yts.mx/assets/images/movies/last_resort_2022/background.jpg",
+      "background_image_original": "https://yts.mx/assets/images/movies/last_resort_2022/background.jpg",
+      "small_cover_image": "https://yts.mx/assets/images/movies/last_resort_2022/small-cover.jpg",
+      "medium_cover_image": "https://yts.mx/assets/images/movies/last_resort_2022/medium-cover.jpg",
+      "large_cover_image": "https://yts.mx/assets/images/movies/last_resort_2022/large-cover.jpg",
+      "torrents": [
+        {
+          "url": "https://yts.mx/torrent/download/4BE3BDD8D7FE990C82BE648873E4919FF34F9489",
+          "hash": "4BE3BDD8D7FE990C82BE648873E4919FF34F9489",
+          "quality": "720p",
+          "type": "web",
+          "seeds": 60,
+          "peers": 13,
+          "size": "842.38 MB",
+          "size_bytes": 883299451,
+          "date_uploaded": "2023-04-18 16:32:57",
+          "date_uploaded_unix": 1681828377
+        },
+        {
+          "url": "https://yts.mx/torrent/download/A40B9CE10CC4E4737C8A37B36658E60D5F65CC46",
+          "hash": "A40B9CE10CC4E4737C8A37B36658E60D5F65CC46",
+          "quality": "1080p",
+          "type": "web",
+          "seeds": 61,
+          "peers": 9,
+          "size": "1.69 GB",
+          "size_bytes": 1814623683,
+          "date_uploaded": "2023-04-18 17:25:45",
+          "date_uploaded_unix": 1681831545
+        }
+      ],
+      "date_uploaded": "2023-04-18 16:32:57",
+      "date_uploaded_unix": 1681828377
+    }
+  },
+  "@meta": {
+    "server_time": 1682559249,
+    "server_timezone": "CET",
+    "api_version": 2,
+    "execution_time": "0 ms"
+  }
+}
