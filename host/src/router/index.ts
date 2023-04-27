@@ -20,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'detail',
     component: () => import(/* webpackChunkName: "detail" */ '../views/DetailView.vue'),
   },
+  {
+    path: '/angdetail',
+    name: 'angdetail',
+    component: () => import(/* webpackChunkName: "angdetail" */ '../views/AngularDetailView.vue'),
+  },
 ];
 
 const router = createRouter({

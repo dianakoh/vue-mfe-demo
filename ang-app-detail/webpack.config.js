@@ -15,6 +15,7 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: false,
+    splitChunks: false,
   },
   resolve: {
     alias: {
@@ -38,7 +39,8 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         // './Component': './/src/app/app.component.ts',
-        './AppModule': './/src/app/app.module.ts',
+        AppModule: './src/app/app.module.ts',
+        MovieDetailComponent: './src/app/movie-detail/movie-detail.component.ts',
       },
 
       // For hosts (please adjust)

@@ -13,15 +13,13 @@ function MovieDetail({ id }: MovieDetailProps) {
 
   useEffect(() => {
     async function getMovie() {
-      // TODO: fetch 로직 추가
       await axios
         .get(`https://yts.mx/api/v2/movie_details.json`, {
           params: { movie_id: id },
         })
-        .then((response) => {
+        .then((response: any) => {
           setMovie(response.data.data.movie);
         });
-      //setMovie(MovieDetailData.data.movie);
     }
 
     getMovie();

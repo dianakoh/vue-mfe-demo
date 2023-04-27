@@ -1,4 +1,4 @@
-import { NgModule, Injector } from '@angular/core';
+import { DoBootstrap, NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,9 +12,10 @@ import { createCustomElement } from '@angular/elements';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
+export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {
-    const movieDetailElement = createCustomElement(MovieDetailComponent, { injector });
+    const movieDetailElement = createCustomElement(MovieDetailComponent, { injector: this.injector });
     customElements.define('movie-detail-component', movieDetailElement);
   }
+  ngDoBootstrap() {}
 }
