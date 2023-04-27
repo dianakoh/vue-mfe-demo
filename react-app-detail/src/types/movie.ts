@@ -14,3 +14,20 @@ export interface Movie {
   description_full: string;
   description_intro: string;
 }
+
+export interface Movie2 {
+  adult: boolean;
+  backdrop_path: string;
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+  genres: Array<{ id: number; name: string }>;
+}

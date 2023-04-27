@@ -1,4 +1,4 @@
-import MovieDetail from "./components/MovieDetail";
+import MovieDetail2 from "./components/MovieDetail";
 import ReactDOM from "react-dom";
 
 import "./index.scss";
@@ -10,10 +10,10 @@ interface AppProps {
 const App = ({ movieId }: AppProps) => {
   return (
     <div>
-      <MovieDetail id={movieId} />
+      <MovieDetail2 id={movieId} />
     </div>
   );
 };
-ReactDOM.render(<App movieId={50834} />, document.getElementById("app"));
+ReactDOM.render(<App movieId={550} />, document.getElementById("app"));
 
 export default App;
