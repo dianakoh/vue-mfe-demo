@@ -47,6 +47,9 @@ module.exports = defineConfig({
   devServer: {
     port: 8080,
     historyApiFallback: true,
+    client: {
+      overlay: false,
+    },
   },
   configureWebpack: {
     plugins: [
@@ -56,7 +59,7 @@ module.exports = defineConfig({
         remotes: {
           commonComponents: `commonComponents@${getRemoteEntry('common-components', 8084)}`,
           appList: `appList@${getRemoteEntry('app-list', 8081)}`,
-          appDetail: `appDetail@${getRemoteEntry('app-detail', 8082)}`,
+          angAppDetail: `angAppDetail@${getRemoteEntry('app-detail', 8082)}`,
         },
         exposes: {},
         shared: {
