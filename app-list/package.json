@@ -2,9 +2,11 @@
   "name": "app-list",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest ../dist/app-list --mode production",
+    "build:dev": "vue-cli-service build --dest ../dist/app-list --mode development",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -27,6 +29,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

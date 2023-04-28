@@ -1,8 +1,4 @@
-// const { defineConfig } = require("@vue/cli-service");
-// module.exports = defineConfig({
-//   transpileDependencies: true,
-// });
-
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { defineConfig } = require('@vue/cli-service');
 const webpack = require('webpack');
@@ -28,30 +24,31 @@ console.log(
 );
 
 module.exports = defineConfig({
-  // assetsDir: isLocalEnv ? 'resource/' : '../resources/',
+  assetsDir: isLocalEnv ? 'resource/' : './resources/',
   pages: {
     index: {
       entry: './src/index.ts',
     },
   },
-  publicPath: 'auto',
+  publicPath: isLocalEnv ? 'auto' : '/common-components',
   devServer: {
     port: 8084,
     historyApiFallback: true,
   },
   configureWebpack: {
+    ...configureWebpack,
     optimization: {
       splitChunks: {
         cacheGroups: {
           defaultVendors: {
-            name: 'chunk-vendors',
+            name: 'resources/js/chunk-vendors',
             test: /[\\/]node_modules[\\/]/,
             priority: -10,
             chunks: 'async',
             reuseExistingChunk: true,
           },
           common: {
-            name: 'chunk-common',
+            name: 'resources/js/chunk-common',
             minChunks: 2,
             priority: -20,
             chunks: 'async',

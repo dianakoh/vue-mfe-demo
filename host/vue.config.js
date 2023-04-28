@@ -1,7 +1,3 @@
-// const { defineConfig } = require("@vue/cli-service");
-// module.exports = defineConfig({
-//   transpileDependencies: true,
-// });
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { defineConfig } = require('@vue/cli-service');
@@ -27,7 +23,7 @@ console.log(
   process.env.VUE_APP_ENV
 );
 
-const distributionURL = '';
+const distributionURL = process.env.VUE_APP_CF_DIST_DOMAIN_NAME;
 
 const getRemoteEntry = (appName, port) => {
   if (process.env.NODE_ENV === 'production') {
@@ -37,13 +33,13 @@ const getRemoteEntry = (appName, port) => {
 };
 
 module.exports = defineConfig({
-  assetsDir: isLocalEnv ? 'resource/' : '../resources/',
+  assetsDir: isLocalEnv ? 'resource/' : './resources/',
   pages: {
     index: {
       entry: './src/index.ts',
     },
   },
-  publicPath: 'auto',
+  publicPath: isLocalEnv ? 'auto' : '/host',
   devServer: {
     port: 8080,
     historyApiFallback: true,
@@ -52,6 +48,7 @@ module.exports = defineConfig({
     },
   },
   configureWebpack: {
+    ...configureWebpack,
     plugins: [
       new webpack.container.ModuleFederationPlugin({
         name: 'host',
@@ -59,7 +56,6 @@ module.exports = defineConfig({
         remotes: {
           commonComponents: `commonComponents@${getRemoteEntry('common-components', 8084)}`,
           appList: `appList@${getRemoteEntry('app-list', 8081)}`,
-          angAppDetail: `angAppDetail@${getRemoteEntry('ang-app-detail', 8082)}`,
           reactAppDetail: `reactAppDetail@${getRemoteEntry('react-app-detail', 8083)}`,
         },
         exposes: {},
