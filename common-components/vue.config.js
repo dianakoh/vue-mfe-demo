@@ -28,7 +28,7 @@ console.log(
 );
 
 module.exports = defineConfig({
-  assetsDir: isLocalEnv ? 'resource/' : '../resources/',
+  // assetsDir: isLocalEnv ? 'resource/' : '../resources/',
   pages: {
     index: {
       entry: './src/index.ts',
