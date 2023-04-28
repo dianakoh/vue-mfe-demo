@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import MovieDetail2 from "./components/MovieDetail2";
+import MovieDetail from "./components/MovieDetail";
 
 export const mount = (movieId: number) => {
   const id = "app-detail";
@@ -13,7 +13,7 @@ export const mount = (movieId: number) => {
   const root = createRoot(rootContainer);
   root.render(
     <StrictMode>
-      <MovieDetail2 id={movieId} />
+      <MovieDetail id={movieId} />
     </StrictMode>
   );
 };

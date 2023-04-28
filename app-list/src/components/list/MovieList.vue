@@ -3,17 +3,22 @@
     <BaseCard v-for="movie in state.movies" :key="movie.id" @click="goToMovieDetail(movie.id)">
       <div class="info-section">
         <div class="movie-header">
-          <img class="locandina" :src="movie.medium_cover_image" :alt="movie.title" :title="movie.title" />
+          <img
+            class="locandina"
+            :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
+            :alt="movie.title"
+            :title="movie.title"
+          />
           <div class="title">{{ movie.title }}</div>
-          <div class="year">{{ movie.year }}</div>
-          <ul class="genres">
+          <div class="year">{{ movie.release_date }}</div>
+          <!-- <ul class="genres">
             <li v-for="(genre, idx) in movie.genres" :key="idx" class="genres-genre">
               {{ genre }}
             </li>
-          </ul>
+          </ul> -->
         </div>
         <div class="movie-desc">
-          <p class="summary">{{ movie.summary.slice(0, 140) }}...</p>
+          <p class="summary">{{ movie.overview.slice(0, 140) }}...</p>
         </div>
       </div>
     </BaseCard>

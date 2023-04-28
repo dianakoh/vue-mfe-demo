@@ -1,4 +1,4 @@
-import MovieDetail2 from "./components/MovieDetail";
+import MovieDetail from "./components/MovieDetail";
 import ReactDOM from "react-dom";
 
 import "./index.scss";
@@ -10,7 +10,7 @@ interface AppProps {
 const App = ({ movieId }: AppProps) => {
   return (
     <div>
-      <MovieDetail2 id={movieId} />
+      <MovieDetail id={movieId} />
     </div>
   );
 };
