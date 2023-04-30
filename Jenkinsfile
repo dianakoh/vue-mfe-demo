@@ -12,7 +12,7 @@ pipeline {
         }
       }
     } stage("Build for host") {
-      when { branch 'host' },
+      when { branch 'host' }
       steps {
         nodejs('nodejs-16.15.1') {
           sh 'yarn build'
