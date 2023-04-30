@@ -16,6 +16,7 @@ pipeline {
             when { branch 'host' }
             steps {
                 nodejs('nodejs-16.15.1') {
+                    sh 'cd host'
                     sh 'yarn build'
                 }
             }
