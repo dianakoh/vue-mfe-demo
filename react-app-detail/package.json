@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": ".",
   "scripts": {
-    "build": "WEBPACK_PUBLIC_PATH='/react-app-detail/' webpack build -c webpack.prod.ts",
+    "build": "webpack build -c webpack.prod.ts",
     "build:dev": "webpack serve -c webpack.dev.ts",
     "build:start": "cd dist && PORT=8083 npx serve",
     "start": "webpack serve --open --mode development -c webpack.dev.ts",

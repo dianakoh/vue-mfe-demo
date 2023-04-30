@@ -5,15 +5,13 @@ import { Configuration } from "webpack";
 import { merge } from "webpack-merge";
 import commonConfig from "./webpack.config";
 
-const { WEBPACK_PUBLIC_PATH } = process.env;
-
 export const productionConfig: Configuration = {
   mode: "production",
   output: {
     clean: true,
     filename: "resources/js/[contenthash].js",
     path: resolve("../", "dist/react-app-detail"),
-    publicPath: WEBPACK_PUBLIC_PATH || "/",
+    publicPath: "/react-app-detail/" || "/",
   },
   module: {
     rules: [
