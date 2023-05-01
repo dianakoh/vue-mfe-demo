@@ -33,7 +33,7 @@ pipeline {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
                     aws s3 sync ${env.WORKSPACE}/dist/host s3://${env.HOST_BUCKET_NAME}/ --delete
-                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DOMAIN} --paths '/host' --output text
+                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DOMAIN} --paths '/*' --output text
                     """
                 }
             }
