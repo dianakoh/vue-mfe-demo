@@ -6,7 +6,7 @@ pipeline {
             when { branch 'host' }
             steps {   
                 nodejs('nodejs-16.15.1') {
-                    sh 'cd host'
+                    sh """cd ${WORKSPACE}/host"""
                     sh 'rm -rf node_modules'
                     sh 'yarn'
                 }
@@ -16,7 +16,7 @@ pipeline {
             when { branch 'host' }
             steps {
                 nodejs('nodejs-16.15.1') {
-                    sh 'cd host'
+                    sh """cd ${WORKSPACE}/host"""
                     sh 'yarn build'
                 }
             }
