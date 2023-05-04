@@ -128,7 +128,7 @@ pipeline {
             steps {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
-                    aws s3 sync ${env.WORKSPACE}/dist/app-list s3://${env.BUCKET_NAME}/common-components/ --delete
+                    aws s3 sync ${env.WORKSPACE}/dist/common-components s3://${env.BUCKET_NAME}/common-components/ --delete
                     aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/common-components' --output text
                     """
                 }
