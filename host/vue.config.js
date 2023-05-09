@@ -57,6 +57,7 @@ module.exports = defineConfig({
           commonComponents: `commonComponents@${getRemoteEntry('common-components', 8084)}`,
           appList: `appList@${getRemoteEntry('app-list', 8081)}`,
           reactAppDetail: `reactAppDetail@${getRemoteEntry('react-app-detail', 8083)}`,
+          angularAppAbout: `angularAppAbout@${getRemoteEntry('angular-app-about', 4200)}`,
         },
         exposes: {},
         shared: {
