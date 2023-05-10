@@ -1,18 +1,13 @@
 <template>
-  <app-root></app-root>
+  <div>AboutView</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, onMounted } from 'vue';
-import { mount } from 'angularAppAbout/mount';
+import { defineComponent, reactive } from 'vue';
 export default defineComponent({
   name: 'AboutView',
   setup(props, { emit }) {
     const state = reactive({});
-
-    onMounted(() => {
-      mount();
-    });
 
     return {
       state,
