@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
         stage("Clean for host") {
-            when { branch 'host' }
+            when { tag 'host_*' }
             steps {
                 dir("${env.WORKSPACE}/host") {
                     nodejs('nodejs-16.15.1') {
@@ -18,7 +18,7 @@ pipeline {
             }
         }
         stage("Clean for app-list") {
-            when { branch 'app-list' }
+            when { tag 'app-list_*' }
             steps {
                 dir("${env.WORKSPACE}/app-list") {
                     nodejs('nodejs-16.15.1') {
@@ -29,7 +29,7 @@ pipeline {
             }
         }
         stage("Clean for app-detail") {
-            when { branch 'react-app-detail' }
+            when { tag 'react-app-detail_*' }
             steps {
                 dir("${env.WORKSPACE}/react-app-detail") {
                     nodejs('nodejs-16.15.1') {
@@ -40,7 +40,7 @@ pipeline {
             }
         }
         stage("Clean for app-about") {
-            when { branch 'angular-app-about' }
+            when { tag 'angular-app-about_*' }
             steps {
                 dir("${env.WORKSPACE}/angular-app-about") {
                     nodejs('nodejs-16.15.1') {
@@ -51,7 +51,7 @@ pipeline {
             }
         }
         stage("Clean for common-components") {
-            when { branch 'common-components' }
+            when { tag 'common-components_*' }
             steps {
                 dir("${env.WORKSPACE}/common-components") {
                     nodejs('nodejs-16.15.1') {
@@ -62,7 +62,7 @@ pipeline {
             }
         }
         stage("Build for host") {
-            when { branch 'host' }
+            when { tag 'host_*' }
             steps {
                 dir("${env.WORKSPACE}/host") {
                     nodejs('nodejs-16.15.1') {
@@ -72,7 +72,7 @@ pipeline {
             }
         }
         stage("Build for app-list") {
-            when { branch 'app-list' }
+            when { tag 'app-list_*' }
             steps {
                 dir("${env.WORKSPACE}/app-list") {
                     nodejs('nodejs-16.15.1') {
@@ -82,7 +82,7 @@ pipeline {
             }
         }
         stage("Build for app-detail") {
-            when { branch 'react-app-detail' }
+            when { tag 'react-app-detail_*' }
             steps {
                 dir("${env.WORKSPACE}/react-app-detail") {
                     nodejs('nodejs-16.15.1') {
@@ -92,7 +92,7 @@ pipeline {
             }
         }
         stage("Build for app-about") {
-            when { branch 'angular-app-about' }
+            when { tag 'angular-app-about_*' }
             steps {
                 dir("${env.WORKSPACE}/angular-app-about") {
                     nodejs('nodejs-16.15.1') {
@@ -102,7 +102,7 @@ pipeline {
             }
         }
         stage("Build for common-components") {
-            when { branch 'common-components' }
+            when { tag 'common-components_*' }
             steps {
                 dir("${env.WORKSPACE}/common-components") {
                     nodejs('nodejs-16.15.1') {
@@ -112,7 +112,7 @@ pipeline {
             }
         }
         stage("Deploy host") {
-            when { branch 'host' }
+            when { tag 'host_*' }
             steps {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
@@ -123,7 +123,7 @@ pipeline {
             }
         }
         stage("Deploy app-list") {
-            when { branch 'app-list' }
+            when { tag 'app-list_*' }
             steps {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
@@ -134,7 +134,7 @@ pipeline {
             }
         }
         stage("Deploy app-detail") {
-            when { branch 'react-app-detail' }
+            when { tag 'react-app-detail_*' }
             steps {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
@@ -145,7 +145,7 @@ pipeline {
             }
         }
         stage("Deploy app-about") {
-            when { branch 'angular-app-about' }
+            when { tag 'angular-app-about_*' }
             steps {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
@@ -156,7 +156,7 @@ pipeline {
             }
         }
         stage("Deploy common-components") {
-            when { branch 'common-components' }
+            when { tag 'common-components_*' }
             steps {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
