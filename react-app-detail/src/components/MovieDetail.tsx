@@ -50,14 +50,14 @@ function MovieDetail({ id }: MovieDetailProps) {
           <p className="summary">{movie.overview}</p>
         </div>
       </div>
-      <div
+      {/* <div
         className="blur-background"
         style={{
           background: `url(https://image.tmdb.org/t/p/w342${movie.poster_path})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-      ></div>
+      ></div> */}
     </div>
   );
 }
