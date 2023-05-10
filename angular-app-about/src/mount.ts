@@ -9,7 +9,14 @@ if (environment.production) {
   enableProdMode();
 }
 
-const mount = () => {
+declare global {
+  interface Window {
+    movieId: number;
+  }
+}
+
+const mount = (id: number) => {
+  window.movieId = id;
   platformBrowserDynamic()
     .bootstrapModule(AppModule)
     .catch((err) => console.error(err));
