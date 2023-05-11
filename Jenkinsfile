@@ -117,7 +117,7 @@ pipeline {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
                     aws s3 sync ${env.WORKSPACE}/dist/host s3://${env.BUCKET_NAME}/host/ --delete
-                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/host' --output text
+                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/*' --output text
                     """
                 }
             }
@@ -128,7 +128,7 @@ pipeline {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
                     aws s3 sync ${env.WORKSPACE}/dist/app-list s3://${env.BUCKET_NAME}/app-list/ --delete
-                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/app-list' --output text
+                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/*' --output text
                     """
                 }
             }
@@ -139,7 +139,7 @@ pipeline {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
                     aws s3 sync ${env.WORKSPACE}/dist/react-app-detail s3://${env.BUCKET_NAME}/react-app-detail/ --delete
-                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/react-app-detail' --output text
+                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/*' --output text
                     """
                 }
             }
@@ -150,7 +150,7 @@ pipeline {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
                     aws s3 sync ${env.WORKSPACE}/dist/angular-app-about s3://${env.BUCKET_NAME}/angular-app-about/ --delete
-                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/angular-app-about' --output text
+                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/*' --output text
                     """
                 }
             }
@@ -161,7 +161,7 @@ pipeline {
                 withAWS(credentials: 'aws-access', region: 'ap-northeast-2') {
                     sh """
                     aws s3 sync ${env.WORKSPACE}/dist/common-components s3://${env.BUCKET_NAME}/common-components/ --delete
-                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/common-components' --output text
+                    aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_DIST_ID} --paths '/*' --output text
                     """
                 }
             }
