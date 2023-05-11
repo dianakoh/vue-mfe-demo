@@ -1,5 +1,6 @@
 <ng-template [ngIf]="reviews" [ngIfElse]="loading">
   <div class="review-container">
+    <h1 style="font-size: 20px; margin-bottom: 1rem">Reviews</h1>
     <div *ngFor="let review of reviews" class="review-item">
       <div class="review-content">{{ review.content.slice(0, 300) }} ...</div>
       <div class="review-author-date">
