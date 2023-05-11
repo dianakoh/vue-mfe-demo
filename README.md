@@ -9,7 +9,7 @@ There are 5 applications.
 - `host` is a Vue application and host container consuming remote modules from other applications.
 - `app-list` is a Vue application rendering and exposing list of movies.
 - `react-app-detail` is a React application redering and exposing details of each movies using movie id.
-- `angular-app-about` is a Angular application rendering and exposing about info of the web site.
+- `angular-app-about` is a Angular application rendering and exposing reviews of each movies using movie id.
 - `common-components` is a Vue application exposing UI components like card, navigation bar.
 
 ## Requirements
