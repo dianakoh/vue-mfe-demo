@@ -2,7 +2,6 @@
   <div>
     <div id="app-detail"></div>
     <div class="app-review">
-      <h1 style="font-size: 20px; margin-bottom: 1rem">Reviews</h1>
       <app-root></app-root>
     </div>
   </div>
