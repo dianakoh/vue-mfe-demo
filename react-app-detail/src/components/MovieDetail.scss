@@ -2,6 +2,9 @@
   /* height: 100vh; */
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .detail-information {
     position: relative;
