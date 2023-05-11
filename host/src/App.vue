@@ -15,10 +15,7 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const state = reactive({
-      navigationItems: [
-        { label: 'Home', to: '/' },
-        { label: 'About', to: '/about' },
-      ],
+      navigationItems: [{ label: 'Home', to: '/' }],
     });
 
     return {
