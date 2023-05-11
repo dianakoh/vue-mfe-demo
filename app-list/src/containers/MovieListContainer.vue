@@ -50,5 +50,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .loader {
   font-weight: 600;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
